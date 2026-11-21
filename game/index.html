@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Market — Spot the Difference</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div id="brand">
+      <div id="title">MORNING MARKET</div>
+      <div id="subtitle">Spot the Difference &middot; 6 stalls &middot; 50 hidden differences</div>
+    </div>
+    <div id="hud">
+      <div class="hud-box"><span class="hud-label">LEVEL</span><span id="hud-level" class="hud-value">1 / 6</span></div>
+      <div class="hud-box big"><span class="hud-label">FOUND</span><span id="hud-found" class="hud-value">0 of 8 found</span></div>
+      <div class="hud-box"><span class="hud-label">TIME</span><span id="hud-time" class="hud-value">2:30</span></div>
+      <div class="hud-box"><span class="hud-label">SCORE</span><span id="hud-score" class="hud-value">0</span></div>
+      <div class="hud-box"><span class="hud-label">STREAK</span><span id="hud-streak" class="hud-value">x0</span></div>
+    </div>
+  </header>
+
+  <div id="levelbar">
+    <span id="level-name">1 &middot; Fruit Stall</span>
+    <span id="level-hint-text">Find every difference between the two pictures. Click it on either side!</span>
+    <span id="level-buttons"></span>
+  </div>
+
+  <main id="boards">
+    <section class="panel" id="panel-left">
+      <div class="panel-tag">LEFT &middot; ORIGINAL</div>
+      <canvas id="canvas-left" width="560" height="400"></canvas>
+    </section>
+    <section class="panel" id="panel-right">
+      <div class="panel-tag">RIGHT &middot; CHANGED</div>
+      <canvas id="canvas-right" width="560" height="400"></canvas>
+    </section>
+    <canvas id="magnifier" width="180" height="180"></canvas>
+    <div id="crosshair"></div>
+  </main>
+
+  <div id="controls">
+    <button id="btn-hint" type="button">Hint (H) &middot; <span id="hint-count">3</span> left</button>
+    <button id="btn-restart" type="button">Restart level (R)</button>
+    <button id="btn-next" type="button">Next level (N)</button>
+    <button id="btn-mute" type="button">Sound: ON (M)</button>
+    <span id="message">Welcome to the morning market!</span>
+  </div>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <div id="overlay-kicker">MORNING MARKET</div>
+      <h1 id="overlay-title">Spot the Difference</h1>
+      <p id="overlay-text">Six busy stalls. Fifty sneaky changes. Find them all before the clock runs out!</p>
+      <div id="overlay-stats"></div>
+      <div id="start-cards" class="hidden"></div>
+      <p id="overlay-how" class="hidden">How to play: click a difference on either picture &middot; move the mouse for the magnifier lens &middot; arrow keys move the crosshair, Enter checks a spot, H hint</p>
+      <button id="overlay-button" type="button">Start playing</button>
+    </div>
+  </div>
+
+  <footer id="help">
+    Mouse: click a difference &middot; move for the magnifier lens &middot; Keyboard: arrow keys move the crosshair, Enter checks a spot, H hint, R restart, N next level, M mute &middot; Wrong click costs 5 seconds &middot; 1 / 2 / 3 / 4 / 5 / 6 jump to a stall
+  </footer>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
